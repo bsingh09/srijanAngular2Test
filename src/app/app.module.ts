@@ -3,8 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {DataTableModule} from "angular2-datatable";
 import { AlertModule } from 'ngx-bootstrap';
+//this is just a simple class module for Angular material Hide
+//only for increase redability
 import {
   MdAutocompleteModule,
   MdButtonModule,
@@ -80,6 +83,7 @@ export class PlunkerMaterialModule {}
 import { AppComponent } from './main/app.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 
+// Main Bootstrap module
 @NgModule({
   declarations: [
     AppComponent,
