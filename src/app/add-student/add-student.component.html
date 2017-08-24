@@ -1,0 +1,52 @@
+<div style="text-align: center;">
+  <md-toolbar>Enter Student Details</md-toolbar>
+</div>
+<form [formGroup]="myForm" novalidate (ngSubmit)="closeDilog(myForm.value, myForm.valid)">
+<div class="row" style="margin-top: 1%;">
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <md-input-container>
+      <input mdInput placeholder="Name" formControlName="name"  >
+    </md-input-container>
+    <md-error *ngIf="!(myForm.controls.name.valid || (myForm.controls.name.pristine && !submitted))">
+      Name is required (minimum 5 characters).
+    </md-error>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <md-input-container>
+      <input mdInput placeholder="City" formControlName="city"  >
+    </md-input-container>
+    <md-error *ngIf="!(myForm.controls.city.valid || (myForm.controls.city.pristine && !submitted))">
+      City is required
+    </md-error>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <md-input-container>
+      <input mdInput type="number" placeholder="Age" formControlName="age"  >
+    </md-input-container>
+    <md-error *ngIf="!(myForm.controls.age.valid || (myForm.controls.age.pristine && !submitted))">
+      Age is required
+    </md-error>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-6">
+    <md-input-container>
+      <input mdInput type="email" placeholder="Email" formControlName="email"   >
+    </md-input-container>
+    <md-error *ngIf="!(myForm.controls.email.valid || (myForm.controls.email.pristine && !submitted))">
+      Email is required
+    </md-error>
+  </div>
+
+</div>
+<div class="row" md-dialog-actions>
+  <div *ngIf="ID == null" class="col-xs-2 col-sm-2 col-md-2">
+    <button type="submit" class="btn btn-success">Add</button>
+  </div>
+  <div *ngIf="ID != null"class="col-xs-2 col-sm-2 col-md-2">
+  <button type="submit" class="btn btn-success">Update</button>
+</div>
+  <div class="col-xs-2 col-sm-2 col-md-2">
+    <button  [mdDialogClose]=null class="btn btn-danger">Cancel</button>
+  </div>
+</div>
+
+  </form>
